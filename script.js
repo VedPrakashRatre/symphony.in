@@ -11,7 +11,7 @@ let currfolder;
 let cardcontain = document.querySelector(".cardcontain")
 async function main(folder) {
     currfolder = folder;
-    let res = await fetch(`/api/list/${folder}`);
+    let res = await fetch(`/api/list?folder=${folder}`);
     let data = await res.json();
     let text = data.files.join("\n");
 
