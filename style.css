@@ -93,7 +93,7 @@ ul li {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    max-width: 100px;
+    max-width: none;
 }
 
 .invert {
