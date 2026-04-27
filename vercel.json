@@ -1,13 +1,7 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/api/list/(.*)",
-      "dest": "/api/list.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": "musics/**"
     }
-  ]
+  }
 }
