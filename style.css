@@ -37,6 +37,7 @@ ul li {
     height: 77vh;
     color: white;
     font-weight: bold;
+    overflow-y : scroll;
 }
 
 .libraryhead {
