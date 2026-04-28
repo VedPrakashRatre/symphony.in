@@ -1,1 +1,69 @@
-
+{
+    "musics": [
+        "Orb",
+        "ReZero",
+        "apothecary",
+        "cs",
+        "expedition33",
+        "frieren",
+        "hollow knight",
+        "monogatari",
+        "mushoku tensei",
+        "oshinoko",
+        "sdgs",
+        "wuthering waves"
+    ],
+    "musics/Orb": [
+        "Orb__On_the_Movements_of_the_Earth_-_Opening_Theme(256k).mp3"
+    ],
+    "musics/ReZero": [
+        "Re_ZERO_-Starting_Life_in_Another_World-_-_Ending_2__HD_(256k).mp3",
+        "TVアニメ「Re_ゼロから始める異世界生活」2nd_season_EDテーマ「Memento」アニメMV(256k).mp3",
+        "TVアニメ「Re_ゼロから始める異世界生活」2nd_season_後期EDテーマ「Believe_in_you」_nonoc_視聴動画(256k).mp3"
+    ],
+    "musics/apothecary": [
+        "The_Apothecary_Diaries_-_Opening_2__4K__60FPS__Creditless_(256k).mp3"
+    ],
+    "musics/cs": [
+        "【鳴潮_千咲】_Luna_-_Unveil_feat.ねんね(256k).mp3",
+        "ロクデナシ「雨景色」__Rokudenashi_-_The_Shape_of_Rain【Official_Music_Video】(256k).mp3",
+        "好きだから。_『ユイカ』【MV】(256k).mp3",
+        "桜恋__もさを。【Music_Video】(256k).mp3"
+    ],
+    "musics/expedition33": [
+        "Clair_Obscur__Expedition_33__Alicia_[Official_Music_Video](256k).mp3",
+        "Clair_Obscur__Expedition_33__Lumière_[Official_Music_Video](256k).mp3",
+        "Une_vie_à_t_aimer(256k).mp3"
+    ],
+    "musics/frieren": [
+        "「Creditless」Frieren__Beyond_Journey_s_End_OP___Opening_2「UHD_60FPS」(256k).mp3",
+        "『葬送のフリーレン』第2期ノンクレジットエンディング映像／EDテーマ：「The_Story_of_Us」milet／フリーレンED(256k).mp3"
+    ],
+    "musics/hollow knight": [
+        "Nightmare_King__Hollow_Knight__The_Grimm_Troupe_(256k).mp3",
+        "The_Troupe_Master__Grimm___Nightmare_King__-_Hollow_Knight__The_Grimm_Troupe_DLC_OST(256k).mp3"
+    ],
+    "musics/monogatari": [
+        "Bakemonogatari_-_Ending__kimi_no_Shiranai_-_Creditless_1080p(256k).mp3"
+    ],
+    "musics/mushoku tensei": [
+        "「Creditless」Mushoku_Tensei_Season_2_OP___Opening_1「UHD_60FPS」(256k).mp3"
+    ],
+    "musics/oshinoko": [
+        "【推しの子】第3期ノンクレジットオープニング｜ちゃんみな「TEST_ME」(256k).mp3"
+    ],
+    "musics/sdgs": [
+        "good_b_music-my-life-main-6670.mp3",
+        "music_for_video-chilled-acoustic-indie-folk-ig-version-60s-9648.mp3",
+        "sonican-relaxing-background-music-calm-loop-487908.mp3",
+        "soulfuljamtracks-strings-violin-background-478146.mp3"
+    ],
+    "musics/wuthering waves": [
+        "A_Small_Miracle(256k).mp3",
+        "Moonlit_Solitude___Rinascita_Avinoleum_Vocal_OST___Wuthering_Waves_2.2_OST(256k).mp3",
+        "Rinascita Where Wind Whispers OST — Wuthering Waves - Narushio.mp3",
+        "Vernal_Days_Dreamed_by_the_Star(256k).mp3",
+        "Voyaging_Star_s_Farewell(256k).mp3",
+        "Wuthering_Waves_OST_Behind_the_Scenes_—_Where_Wind_Whispers___Wind-kissed_Haven(256k).mp3"
+    ]
+}
