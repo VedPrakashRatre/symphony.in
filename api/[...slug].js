@@ -15,10 +15,10 @@ const data = {
 };
 
 export default function handler(req, res) {
-    const { slug } = req.query;
-    const parts = Array.isArray(slug) ? slug : [slug];
+    const slug = req.query.slug;
+    const parts = slug ? (Array.isArray(slug) ? slug : [slug]) : [];
     const folderPath = parts.join("/");
 
-   const files = data[folderPath] || [];
-res.status(200).json({ files, debug: { slug, parts, folderPath } });
+    const files = data[folderPath] || [];
+    res.status(200).json({ files, debug: { slug, parts, folderPath } });
 }
