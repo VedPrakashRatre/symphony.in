@@ -1,4 +1,6 @@
-import indexData from '../index.json' assert { type: 'json' };
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const indexData = require('../index.json');
 
 export default function handler(req, res) {
     const { path: segments } = req.query;
