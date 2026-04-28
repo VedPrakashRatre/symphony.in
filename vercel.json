@@ -1,7 +1,5 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "includeFiles": "musics/**"
-    }
-  }
+    "rewrites": [
+        { "source": "/api/(.*)", "destination": "/api/[...slug].js" }
+    ]
 }
