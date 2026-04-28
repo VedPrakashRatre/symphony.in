@@ -19,6 +19,6 @@ export default function handler(req, res) {
     const parts = Array.isArray(slug) ? slug : [slug];
     const folderPath = parts.join("/");
 
-    const files = data[folderPath] || [];
-    res.status(200).json({ files });
+   const files = data[folderPath] || [];
+res.status(200).json({ files, debug: { slug, parts, folderPath } });
 }
