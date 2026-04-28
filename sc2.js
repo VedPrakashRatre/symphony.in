@@ -33,7 +33,7 @@ const playmusic = (m, pause = false) => {
         currentsong.play();
         play.src = "pause.svg"
     }
-    document.querySelector(".songinfo").innerHTML = m;
+    document.querySelector(".songinfo").innerHTML = decodeURIComponent(m);
     document.querySelector(".playtime").innerHTML = "00:00"
 }
 async function displayfolder() {
