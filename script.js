@@ -28,12 +28,8 @@ async function main(folder) {
 }
 
 const playmusic = (m, pause = false) => {
-    if (currfolder === "musics") {
-        currentsong.src = `/musics/` + m;
-    } else {
-        currentsong.src = `/${currfolder}/` + m;
-    }
-
+    
+   currentsong.src = `/${currfolder}/` + m;
     if (!pause) {
         currentsong.play();
         play.src = "pause.svg"
