@@ -15,8 +15,8 @@ const data = {
 };
 
 export default function handler(req, res) {
-    const { path: segments } = req.query;
-    const parts = Array.isArray(segments) ? segments : [segments];
+    const { slug } = req.query;
+    const parts = Array.isArray(slug) ? slug : [slug];
     const folderPath = parts.join("/");
 
     const files = data[folderPath] || [];
