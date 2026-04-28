@@ -14,7 +14,7 @@ const data = {
     "musics/wuthering waves": ["A_Small_Miracle(256k).mp3","Moonlit_Solitude___Rinascita_Avinoleum_Vocal_OST___Wuthering_Waves_2.2_OST(256k).mp3","Rinascita Where Wind Whispers OST — Wuthering Waves - Narushio.mp3","Vernal_Days_Dreamed_by_the_Star(256k).mp3","Voyaging_Star_s_Farewell(256k).mp3","Wuthering_Waves_OST_Behind_the_Scenes_—_Where_Wind_Whispers___Wind-kissed_Haven(256k).mp3"]
 };
 
-module.exports = function handler(req, res) {
+export default function handler(req, res) {
     const { path: segments } = req.query;
     const parts = Array.isArray(segments) ? segments : [segments];
     const folderPath = parts.join("/");
