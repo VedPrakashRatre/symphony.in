@@ -1,5 +1,4 @@
 let song = [];
-let i = 0;
 let currentsong = new Audio();
 let songul = document.querySelector(".songnames");
 currentsong.volume = 0.7;
@@ -42,7 +41,7 @@ async function displayfolder() {
     let data = await res.json();
     if (!data || !data.files) return;
 
-    let folders = data.files.filter(f => !f.endsWith(".mp3"));
+    let folders = data.files.filter(f => f && !f.endsWith(".mp3") && !f.endsWith(".jpg") && !f.endsWith(".json"));
 
     for (let folder of folders) {
         let res = await fetch(`/musics/${folder}/info.json`);
@@ -98,30 +97,8 @@ function formatTime(time) {
 }
 
 async function playsong() {
-    let songs = await main("musics");
-    playmusic(songs[0], true);
-
+    // Just display folders, no library songs since root has no mp3s
     displayfolder();
-
-    for (const sung of songs) {
-        songul.innerHTML += `<li>
-            <img class="invert" src="music.svg" width="40px" alt="">
-            <div class="info">
-                <div>${sung}</div>
-            </div>
-            <div>Unknown</div>
-            <div class="playnow">
-                <div>play now</div>
-                <div class="playnowimg"><img class="invert" src="musicplayer.svg" alt=""></div>
-            </div>
-        </li>`;
-    }
-
-    Array.from(document.querySelector(".songnames").getElementsByTagName("li")).forEach(e => {
-        e.addEventListener("click", () => {
-            playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
-        })
-    });
 
     play.addEventListener("click", () => {
         if (currentsong.paused) {
