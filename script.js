@@ -13,13 +13,12 @@ let cardcontain = document.querySelector(".cardcontain")
 async function main(folder) {
     currfolder = folder;
     let res = await fetch(`/api/${folder}`);
+    if (!res.ok) return [];
     let data = await res.json();
+    if (!data || !data.files) return [];
 
-    if (!data || !data.files) return song;
-
-    let files = data.files;
     song = [];
-    for (let file of files) {
+    for (let file of data.files) {
         if (file.endsWith(".mp3")) {
             song.push(file);
         }
@@ -28,8 +27,7 @@ async function main(folder) {
 }
 
 const playmusic = (m, pause = false) => {
-    
-   currentsong.src = `/${currfolder}/` + m;
+    currentsong.src = `/${currfolder}/` + m;
     if (!pause) {
         currentsong.play();
         play.src = "pause.svg"
@@ -40,15 +38,15 @@ const playmusic = (m, pause = false) => {
 
 async function displayfolder() {
     let res = await fetch(`/api/musics`);
+    if (!res.ok) return;
     let data = await res.json();
-
     if (!data || !data.files) return;
 
-    let array = data.files.filter(f => !f.includes("."))
-    for (let folder of array) {
+    let folders = data.files.filter(f => !f.endsWith(".mp3"));
+
+    for (let folder of folders) {
         let res = await fetch(`/musics/${folder}/info.json`);
         let text = await res.json();
-        console.log(text);
         cardcontain.innerHTML += `<div data-folder="${folder}" class="cards rounded">
             <div class="img">
                 <div class="plybutton"><img src="playbutton.svg" alt="playbutton"></div>
@@ -80,10 +78,7 @@ async function displayfolder() {
                 </li>`;
             }
 
-            // Auto-play first song of the album
-            if (songs.length > 0) {
-                playmusic(songs[0]);
-            }
+            if (songs.length > 0) playmusic(songs[0]);
 
             Array.from(document.querySelector(".songnames").getElementsByTagName("li")).forEach(e => {
                 e.addEventListener("click", () => {
@@ -95,9 +90,7 @@ async function displayfolder() {
 }
 
 function formatTime(time) {
-    if (isNaN(time)) {
-        return "0:00"
-    }
+    if (isNaN(time)) return "0:00"
     const totalSeconds = Math.floor(time);
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
@@ -105,7 +98,6 @@ function formatTime(time) {
 }
 
 async function playsong() {
-    song = [];
     let songs = await main("musics");
     playmusic(songs[0], true);
 
@@ -168,17 +160,13 @@ async function playsong() {
     previous.addEventListener("click", () => {
         let currentFile = decodeURIComponent(currentsong.src.split("/").pop());
         let index = song.indexOf(currentFile);
-        if (index > 0) {
-            playmusic(song[index - 1]);
-        }
+        if (index > 0) playmusic(song[index - 1]);
     })
 
     next.addEventListener("click", () => {
         let currentFile = decodeURIComponent(currentsong.src.split("/").pop());
         let index = song.indexOf(currentFile);
-        if (index < song.length - 1) {
-            playmusic(song[index + 1]);
-        }
+        if (index < song.length - 1) playmusic(song[index + 1]);
     })
 
     document.querySelector(".volup").addEventListener("click", e => {
@@ -189,7 +177,6 @@ async function playsong() {
         currentsong.volume = parseInt(f) / 100;
     })
 
-    // Auto-advance to next song when current one ends
     currentsong.addEventListener("ended", () => {
         let currentFile = decodeURIComponent(currentsong.src.split("/").pop());
         let index = song.indexOf(currentFile);
